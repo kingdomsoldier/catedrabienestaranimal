@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-header{
+    background-image: url(assets/background_header.jpg);
+    background-size: cover;
+}

@@ -4,10 +4,19 @@ import Header from './components/Header';
 function App() {
 
   return (
+    <div>
+        <Header
+        imgSrc='src/assets/Logo_Catedra.png'
+        titulo='Biograía'
+        />
+
+        <main>
+            
+        </main>
+    </div>
     
-    <Header
-      imgSrc="src/assets/Logo_Catedra.png"
-    />
+
+  
  
     
   )
