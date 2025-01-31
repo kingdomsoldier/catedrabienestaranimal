@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, BrowserRouter, Routes } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { urlNavBar } from "../types/urlNavBar";
 
 
 interface FragmentHeaderProps{
@@ -10,10 +11,11 @@ interface FragmentHeaderProps{
     stylesNav?: string;
     stylesUl?: string;
     stylesLi?: string;
+    stylestitulo?: string;
     imgSrc?: string;
 }
 
-const FragmentHeader: React.FC<FragmentHeaderProps> =({id, imgSrc, titulo = '', subtitulo, styles, stylesNav, stylesUl, stylesLi}) =>{
+const FragmentHeader: React.FC<FragmentHeaderProps> =({id, imgSrc, titulo = '', subtitulo, styles, stylesNav, stylesUl, stylesLi, stylestitulo}) =>{
     return(
         <div id = {id} className={styles}>
 
@@ -21,19 +23,23 @@ const FragmentHeader: React.FC<FragmentHeaderProps> =({id, imgSrc, titulo = '', 
                 <div>  
                     <img src={imgSrc} alt="logo de la cátedra" />  
                 </div>  
-                <div className='mx-2'>  
-                    <h1 className='text-3xl font-bold'>{titulo}</h1>  
-                    <h2>{subtitulo}</h2>  
+                <div className= {`mx-2 ${stylestitulo}`}>  
+                    <h2 className='text-3xl font-bold'>{titulo}</h2>  
+                    <h1>{subtitulo}</h1>  
                 </div>  
             </div>  
  
                 <nav className={stylesNav}>  
                     <ul className={stylesUl}>  
                         <li className = {stylesLi}><Link to='/catedrabienestaranimal/'>Inicio</Link></li>  
-                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/biografia">Biografia</Link></li>
-                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/Home">Home</Link></li>
+                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/fundamentacion">Fundamentación</Link></li>
+                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/historia">Historia</Link></li>
+                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/galeria">Galeria</Link></li>
+                        <li className = {stylesLi}><Link to="/catedrabienestaranimal/miembros">Miembros</Link></li>
                     </ul>  
-                </nav> 
+                </nav>
+
+
             
         </div>
     );
